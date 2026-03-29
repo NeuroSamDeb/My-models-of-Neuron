@@ -1,0 +1,21 @@
+# Leaky Integrate-and-Fire (LIF) Neuron Simulation
+
+This repository contains a standalone, independent Python implementation of a Leaky Integrate-and-Fire (LIF) neuron model. This project demonstrates the application of numerical methods to simulate sub-threshold membrane dynamics and artificial spike generation in computational neuroscience.
+
+## 🔬 Scientific Context
+The LIF model is one of the most widely used abstractions in computational neuroscience due to its high efficiency in simulating large networks. It treats the cell membrane as a simple $RC$ circuit where:
+* **The "Leaky" component** simulates the continuous decay of the membrane potential back to its resting state through passive ion channels.
+* **The "Integrate" component** continuously sums incoming external currents over time using Euler's method for numerical integration.
+* **The "Fire" component** enforces a manual hard threshold. When the membrane potential $V(t)$ crosses $V_{thresh}$, a spike is recorded, and the voltage is immediately reset to a resting value for a set refractory period.
+
+## 🛠️ Features
+* **Numerical Integration:** Uses a discrete time-step ($dt$) with Euler's method to solve the governing differential equation.
+* **Customizable Parameters:** Easily tweak resting potential, membrane resistance, capacitance, and threshold values to see different firing behaviors.
+* **Visualizations:** Generates clean, labeled Matplotlib plots showing the continuous sub-threshold voltage traces alongside the artificial spike resets.
+
+## 💻 Tech Stack
+* **Language:** Python 3
+* **Libraries:** NumPy, Matplotlib
+
+## 📈 Next Steps
+To expand on this base model, future iterations will look into applying more complex input stimuli (like Poisson point processes to mimic synaptic noise) or moving toward an Adaptive Exponential (AdEx) model to simulate biological spike-frequency adaptation.
