@@ -11,7 +11,7 @@ Unlike simplified integrate-and-fire models, the Hodgkin-Huxley model does not m
 By solving these equations simultaneously, the model successfully simulates the actual biophysical shape of a spike, including the rapid depolarization peak and the hyperpolarization dip afterward.
 
 ## 🛠️ Implementation Details
-* **Numerical Integration:** Solved using Euler's method with a highly refined time-step ($dt \le 0.05\text{ ms}$) to ensure the numerical stability of the non-linear gating variables ($\alpha$ and $\beta$).
+* **Numerical Integration:** Solved using Euler's method with a highly refined time-step to ensure the numerical stability of the non-linear gating variables ($\alpha$ and $\beta$).
 * **Input Stimulus:** Generates a continuous voltage trace in response to a constant injected current $I_{ext}$, showing continuous spiking behavior once the current passes the rheobase threshold.
 
 ## 💻 Tech Stack
