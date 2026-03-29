@@ -1,0 +1,22 @@
+# Hodgkin-Huxley (HH) Biophysical Neuron Simulation
+
+This repository contains a standalone Python implementation of the classic Hodgkin-Huxley model. Developed to explore the biophysical mechanisms behind action potential generation, this project simulates the continuous opening and closing of voltage-gated ion channels.
+
+## 🔬 Scientific Context
+Unlike simplified integrate-and-fire models, the Hodgkin-Huxley model does not manually "reset" the membrane potential at a hard threshold. Instead, it uses a system of four coupled, non-linear ordinary differential equations (ODEs) to describe:
+* **Sodium ($Na^+$) Channels:** Controlled by activation (m) and inactivation ($h$) gating variables.
+* **Potassium ($K^+$) Channels:** Controlled by the activation (n) gating variable.
+* **Leak Channels ($L$):** Passive background ion movement.
+
+By solving these equations simultaneously, the model successfully simulates the actual biophysical shape of a spike, including the rapid depolarization peak and the hyperpolarization dip afterward.
+
+## 🛠️ Implementation Details
+* **Numerical Integration:** Solved using Euler's method with a highly refined time-step ($dt \le 0.05\text{ ms}$) to ensure the numerical stability of the non-linear gating variables ($\alpha$ and $\beta$).
+* **Input Stimulus:** Generates a continuous voltage trace in response to a constant injected current $I_{ext}$, showing continuous spiking behavior once the current passes the rheobase threshold.
+
+## 💻 Tech Stack
+* **Language:** Python 3
+* **Libraries:** NumPy, Matplotlib, SciPy
+
+## 📈 Active Debugging & Next Steps
+* **Resting Potential Realignment:** Actively adjusting the sign conventions and voltage-shifting of the $\alpha$ and $\beta$ gating variables to align the simulation precisely with modern biological resting potential scales (approx. $-65\text{ mV}$) rather than the original paper's $0\text{ mV}$ baseline.
